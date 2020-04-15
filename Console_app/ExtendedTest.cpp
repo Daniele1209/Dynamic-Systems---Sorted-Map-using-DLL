@@ -326,5 +326,5 @@ void testAllExtended() {
 	testSearch();
 	testRemove();
 	testIterator();
-	//testQuantity();
+	testQuantity();
 }

@@ -10,8 +10,11 @@ SortedMap::SortedMap(Relation r):rel(r) {
 	this->lsize = 0;
 }
 
+
+//complexity: best case - theta(1)  worst - theta(n)
 TValue SortedMap::add(TKey k, TValue v) {
 	Node* current_node = this->head;
+
 	while (current_node != NULL && current_node->info.first != k) {
 		current_node = current_node->next;
 	}
@@ -76,6 +79,7 @@ TValue SortedMap::add(TKey k, TValue v) {
  
 }
 
+//complexity: best case - theta(1)  worst - theta(n)
 TValue SortedMap::search(TKey k) const {
 	Node* current_node = this->head;
 	while (current_node != NULL && current_node->info.first != k) {
@@ -87,6 +91,7 @@ TValue SortedMap::search(TKey k) const {
 
 }
 
+//complexity: theta(n)
 TValue SortedMap::remove(TKey k) {
 	Node* current_node = this->head;
 	while (current_node != NULL && current_node->info.first != k) {
@@ -117,10 +122,12 @@ TValue SortedMap::remove(TKey k) {
 	return NULL_TVALUE;
 }
 
+//complexity: theta(1)
 int SortedMap::size() const {
 	return this->lsize;
 }
 
+//complexity: theta(1)
 bool SortedMap::isEmpty() const {
 	if (this->lsize == 0) {
 		return true;
