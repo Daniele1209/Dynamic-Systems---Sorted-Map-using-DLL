@@ -11,7 +11,7 @@ SortedMap::SortedMap(Relation r):rel(r) {
 }
 
 
-//complexity: best case - theta(1)  worst - theta(n)
+//complexity: best case - theta(1)  worst - theta(n)  overall : O(n)
 TValue SortedMap::add(TKey k, TValue v) {
 	Node* current_node = this->head;
 

@@ -15,6 +15,8 @@ public:
 	void next();
 	bool valid() const;
     TElem getCurrent() const;
+	TElem remove();
+	Node* get_the_node();
 };
 
 

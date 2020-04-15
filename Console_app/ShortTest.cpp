@@ -1,5 +1,5 @@
 #include <assert.h>
-
+#include <iostream>
 #include "SortedMap.h"
 #include "SMIterator.h"
 #include "ShortTest.h"
@@ -35,5 +35,28 @@ void testAll(){
     }
     assert(sm.remove(1) == 3);
     assert(sm.isEmpty());
+
+
+    //tests for new function
+    SortedMap sort(relatie1);
+    sort.add(1, 3);
+    sort.add(3, 2);
+    sort.add(2, 5);
+    SMIterator iter = sort.iterator();
+    iter.first();
+    TElem e = iter.getCurrent();
+    assert(iter.remove() == e);
+    iter.remove();
+    iter.next();
+
+    try {
+        iter.remove();
+        assert(false);
+    }
+    catch(exception){
+        assert(true);
+    }
+ 
+    cout << "Additional test passed :)\n\n";
 }
 
